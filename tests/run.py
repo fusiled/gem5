@@ -175,6 +175,8 @@ m5.disableAllListeners()
 # find path to directory containing this file
 tests_root = os.path.dirname(__file__)
 test_progs = os.environ.get('M5_TEST_PROGS', '/dist/m5/regression/test-progs')
+data_dir = os.environ.get('M5_TEST_DATA', '/home/vagrant/base')
+
 if not os.path.isdir(test_progs):
     test_progs = joinpath(tests_root, 'test-progs')
 
