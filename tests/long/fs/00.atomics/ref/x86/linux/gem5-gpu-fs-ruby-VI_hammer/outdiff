@@ -1,0 +1,29 @@
+Files /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/ce_stats.txt and build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/ce_stats.txt are identical
+Files /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/config.ini and build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/config.ini are identical
+Files /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/config.json and build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/config.json are identical
+Files /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/config_fermi_islip.icnt and build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/config_fermi_islip.icnt are identical
+Files /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/gpgpusim.config and build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/gpgpusim.config are identical
+Files /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/gpu_stats.txt and build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/gpu_stats.txt are identical
+Files /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/simerr and build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/simerr are identical
+diff -ubrs -I '^command line:' -I '^gem5 compiled ' -I '^gem5 started ' -I '^gem5 executing on ' -I '^Simulation complete at' -I '^Listening for' -I 'listening for remote gdb' '--exclude=stats.txt' '--exclude=outdiff' /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/simout build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/simout
+--- /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/simout	2018-05-30 10:59:08.542023082 +0000
++++ build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/simout	2018-05-30 10:59:40.138023082 +0000
+@@ -219,12 +219,12 @@
+ GPGPU-Sim PTX: ... end of reconvergence points for _Z30gpu_atomics_shared_address_funPjjj
+ GPGPU-Sim PTX: ... done pre-decoding instructions for '_Z30gpu_atomics_shared_address_funPjjj'.
+ GPGPU-Sim PTX: finished parsing EMBEDDED .ptx file _1.ptx
+-GPGPU-Sim PTX: extracting embedded .ptx to temporary file "_ptx_raviOx"
+-Running: cat _ptx_raviOx | sed 's/.version 1.5/.version 1.4/' | sed 's/, texmode_independent//' | sed 's/\(\.extern \.const\[1\] .b8 \w\+\)\[\]/\1\[1\]/' | sed 's/const\[.\]/const\[0\]/g' > _ptx2_JbVtOQ
+-GPGPU-Sim PTX: generating ptxinfo using "ptxas --gpu-name=sm_20 -v _ptx2_JbVtOQ --output-file  /dev/null 2> _ptx_raviOxinfo"
++GPGPU-Sim PTX: extracting embedded .ptx to temporary file "_ptx_qwlqAc"
++Running: cat _ptx_qwlqAc | sed 's/.version 1.5/.version 1.4/' | sed 's/, texmode_independent//' | sed 's/\(\.extern \.const\[1\] .b8 \w\+\)\[\]/\1\[1\]/' | sed 's/const\[.\]/const\[0\]/g' > _ptx2_pjDltg
++GPGPU-Sim PTX: generating ptxinfo using "ptxas --gpu-name=sm_20 -v _ptx2_pjDltg --output-file  /dev/null 2> _ptx_qwlqAcinfo"
+ GPGPU-Sim PTX: Kernel '_Z30gpu_atomics_shared_address_funPjjj' : regs=6, lmem=0, smem=0, cmem=56
+ GPGPU-Sim PTX: Kernel '_Z23gpu_atomics_address_funPjjj' : regs=8, lmem=0, smem=0, cmem=48
+-GPGPU-Sim PTX: removing ptxinfo using "rm -f _ptx_raviOx _ptx2_JbVtOQ _ptx_raviOxinfo"
++GPGPU-Sim PTX: removing ptxinfo using "rm -f _ptx_qwlqAc _ptx2_pjDltg _ptx_qwlqAcinfo"
+ kernel '_Z23gpu_atomics_address_funPjjj' transfer to GPU hardware scheduler
+ GPGPU-Sim uArch: Shader 1 bind to kernel 1 '_Z23gpu_atomics_address_funPjjj'
+ GPGPU-Sim uArch: CTA/core = 8, limited by: cta_limit
+Files /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer/statsdiff and build/X86_VI_hammer_GPU/tests/opt/quick/g5gpu/00.atomics/x86/linux/gem5-gpu-ruby-VI_hammer/statsdiff are identical
+Only in /home/vagrant/gem5-gpu/gem5/tests/quick/g5gpu/00.atomics/ref/x86/linux/gem5-gpu-ruby-VI_hammer: status

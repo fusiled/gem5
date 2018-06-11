@@ -38,6 +38,8 @@
 #
 # Authors: Steve Reinhardt
 
+
+
 import os
 import sys
 import re
@@ -48,6 +50,12 @@ import os.path
 import os
 
 import m5
+
+from m5.util import addToPath
+
+addToPath('../configs/common')
+
+from Simulation import findCptDir
 
 def skip_test(reason=""):
     """Signal that a test should be skipped and optionally print why.
@@ -138,8 +146,21 @@ def require_kvm(kvm_dev="/dev/kvm", fatal=False):
 def run_test(root):
     """Default run_test implementations. Scripts can override it."""
 
+    if options.script is not None:
+        system.readfile = options.script
+
+    if options.checkpoint_dir:
+        cptdir = options.checkpoint_dir
+    elif m5.options.outdir:
+        cptdir = m5.options.outdir
+    else:
+        cptdir = getcwd()
+    checkpoint_dir = None
+    if options.checkpoint_restore:
+        cpt_starttick, checkpoint_dir = findCptDir(options, cptdir, root)
+
     # instantiate configuration
-    m5.instantiate()
+    m5.instantiate(checkpoint_dir)
 
     # simulate until program terminates
     exit_event = m5.simulate(maxtick)
@@ -172,6 +193,7 @@ def inputpath(app, file=None):
     return joinpath(test_progs, app, 'input', file)
 
 # build configuration
+custom_test_settings=joinpath(tests_root, category, mode, name, 'test.py')
 sys.path.append(joinpath(tests_root, 'configs'))
 test_filename = config
 # for ruby configurations, remove the protocol name from the test filename
@@ -214,4 +236,6 @@ for sysattr in [ "system", "testsys", "drivesys" ]:
     if hasattr(root, sysattr):
         initCPUs(getattr(root, sysattr))
 
-run_test(root)
+#with gem5-gpu we delegates the simulation execution to the python script, so we don't need this
+if not env['GPGPU_SIM']:
+    run_test(root)

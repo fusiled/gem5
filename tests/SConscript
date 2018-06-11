@@ -363,6 +363,7 @@ configs += ['simple-atomic', 'simple-atomic-mp',
 
 if env['GPGPU_SIM']:
     configs.append('gem5-gpu')
+    configs.append('gem5-gpu-fs')
 
 if env['PROTOCOL'] != 'None':
     if env['PROTOCOL'] == 'MI_example':
